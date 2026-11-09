@@ -1,0 +1,504 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "2.1"
+      ]
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "topic": {
+          "type": "string",
+          "minLength": 1
+        },
+        "working_title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "platform": {
+          "type": "string",
+          "enum": [
+            "TikTok",
+            "Instagram Reels",
+            "YouTube Shorts"
+          ]
+        },
+        "language": {
+          "type": "string",
+          "enum": [
+            "ru"
+          ]
+        },
+        "target_duration_seconds": {
+          "type": "integer",
+          "minimum": 15,
+          "maximum": 180
+        },
+        "target_audience": {
+          "type": "string"
+        },
+        "editorial_angle": {
+          "type": "string"
+        },
+        "tone": {
+          "type": "string"
+        },
+        "aspect_ratio": {
+          "type": "string",
+          "enum": [
+            "9:16"
+          ]
+        }
+      },
+      "required": [
+        "topic",
+        "working_title",
+        "platform",
+        "language",
+        "target_duration_seconds",
+        "target_audience",
+        "editorial_angle",
+        "tone",
+        "aspect_ratio"
+      ]
+    },
+    "research_brief": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "central_thesis": {
+          "type": "string"
+        },
+        "key_points": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "factual_claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "claim_id": {
+                "type": "string",
+                "minLength": 3,
+                "maxLength": 32
+              },
+              "claim": {
+                "type": "string",
+                "minLength": 1
+              },
+              "claim_type": {
+                "type": "string",
+                "enum": [
+                  "statistical",
+                  "scientific",
+                  "medical",
+                  "historical",
+                  "legal",
+                  "economic",
+                  "causal",
+                  "other"
+                ]
+              },
+              "used_in_script": {
+                "type": "boolean"
+              },
+              "script_excerpt": {
+                "type": "string"
+              },
+              "verification_status": {
+                "type": "string",
+                "enum": [
+                  "needs_external_check",
+                  "present_in_user_notes_unverified",
+                  "verified_in_user_material"
+                ]
+              },
+              "verification_note": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "claim_id",
+              "claim",
+              "claim_type",
+              "used_in_script",
+              "script_excerpt",
+              "verification_status",
+              "verification_note"
+            ]
+          }
+        },
+        "source_material_used": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missing_information": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "central_thesis",
+        "key_points",
+        "factual_claims",
+        "source_material_used",
+        "missing_information"
+      ]
+    },
+    "script": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "hook": {
+          "type": "string",
+          "minLength": 1
+        },
+        "full_text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "closing_line": {
+          "type": "string",
+          "minLength": 1
+        },
+        "estimated_word_count": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "hook",
+        "full_text",
+        "closing_line",
+        "estimated_word_count"
+      ]
+    },
+    "visual_style": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "overall_direction": {
+          "type": "string",
+          "minLength": 1
+        },
+        "palette": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "string"
+          }
+        },
+        "lighting": {
+          "type": "string"
+        },
+        "camera_language": {
+          "type": "string"
+        },
+        "texture_and_detail": {
+          "type": "string"
+        },
+        "continuity_rules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "negative_prompt": {
+          "type": "string"
+        },
+        "continuity_entities": {
+          "type": "array",
+          "description": "Список повторяющихся объектов/персонажей с неизменяемым каноническим описанием.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "entity_id": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 32,
+                "pattern": "^[A-Za-z0-9_-]+$"
+              },
+              "entity_type": {
+                "type": "string",
+                "enum": [
+                  "person",
+                  "object",
+                  "place",
+                  "animal",
+                  "graphic"
+                ]
+              },
+              "canonical_description": {
+                "type": "string",
+                "minLength": 8
+              },
+              "consistency_rules": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "reference_asset_path": {
+                "type": "string",
+                "maxLength": 200,
+                "pattern": "^assets/characters/[A-Za-z0-9_-]+_reference\\.png$",
+                "description": "Путь к вручную утверждённому identity reference PNG повторяющегося персонажа."
+              },
+              "reference_image_prompt": {
+                "type": "string",
+                "minLength": 20,
+                "maxLength": 1200,
+                "description": "Промпт для создания одного нейтрального референс-портрета; должен содержать canonical_description."
+              }
+            },
+            "required": [
+              "entity_id",
+              "entity_type",
+              "canonical_description",
+              "consistency_rules"
+            ]
+          }
+        }
+      },
+      "required": [
+        "overall_direction",
+        "palette",
+        "lighting",
+        "camera_language",
+        "texture_and_detail",
+        "continuity_rules",
+        "negative_prompt",
+        "continuity_entities"
+      ]
+    },
+    "scenes": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 15,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "scene_id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "duration_seconds": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 30
+          },
+          "voiceover_text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "visual_purpose": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Одно конкретное англоязычное предложение о видимом содержании кадра и его смысловой функции. Visual anchors должны дословно встречаться здесь."
+          },
+          "asset_type": {
+            "type": "string",
+            "enum": [
+              "generated_image",
+              "image_animation",
+              "ai_video",
+              "motion_graphic",
+              "stock_or_archive"
+            ]
+          },
+          "image_prompt": {
+            "type": "string"
+          },
+          "video_prompt": {
+            "type": "string"
+          },
+          "motion_prompt": {
+            "type": "string"
+          },
+          "on_screen_text": {
+            "type": "string"
+          },
+          "transition": {
+            "type": "string"
+          },
+          "sound_effect": {
+            "type": "string"
+          },
+          "production_note": {
+            "type": "string"
+          },
+          "continuity_notes": {
+            "type": "string"
+          },
+          "continuity_entity_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "visual_anchor_terms": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 5,
+            "items": {
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 80
+            },
+            "description": "2–5 коротких англоязычных визуальных якорей. Каждый дословно присутствует в visual_purpose и image_prompt; для ai_video также в video_prompt.",
+            "uniqueItems": true
+          },
+          "motion_target": {
+            "type": "string",
+            "maxLength": 120,
+            "description": "Для image_animation — один визуальный якорь, присутствующий дословно в image_prompt и camera-only motion_prompt; для остальных маршрутов пустая строка."
+          }
+        },
+        "required": [
+          "scene_id",
+          "duration_seconds",
+          "voiceover_text",
+          "visual_purpose",
+          "asset_type",
+          "image_prompt",
+          "video_prompt",
+          "motion_prompt",
+          "on_screen_text",
+          "transition",
+          "sound_effect",
+          "production_note",
+          "continuity_notes",
+          "continuity_entity_ids",
+          "visual_anchor_terms",
+          "motion_target"
+        ]
+      }
+    },
+    "editing_plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "resolution": {
+          "type": "string",
+          "enum": [
+            "1080x1920"
+          ]
+        },
+        "fps": {
+          "type": "integer",
+          "enum": [
+            30
+          ]
+        },
+        "pacing": {
+          "type": "string"
+        },
+        "subtitle_style": {
+          "type": "string"
+        },
+        "subtitle_position": {
+          "type": "string"
+        },
+        "music_mood": {
+          "type": "string"
+        },
+        "audio_mix_notes": {
+          "type": "string"
+        },
+        "opening_treatment": {
+          "type": "string"
+        },
+        "ending_treatment": {
+          "type": "string"
+        },
+        "opening_ending_inside_scene_durations": {
+          "type": "boolean"
+        },
+        "subtitle_font_family": {
+          "type": "string"
+        },
+        "subtitle_font_size_px": {
+          "type": "integer",
+          "minimum": 24,
+          "maximum": 96
+        },
+        "subtitle_max_chars_per_line": {
+          "type": "integer",
+          "minimum": 16,
+          "maximum": 48
+        },
+        "subtitle_safe_margin_percent": {
+          "type": "number",
+          "minimum": 3,
+          "maximum": 20
+        },
+        "subtitle_highlight_color": {
+          "type": "string"
+        },
+        "voice_target_lufs": {
+          "type": "number",
+          "minimum": -30,
+          "maximum": -8
+        },
+        "music_target_lufs": {
+          "type": "number",
+          "minimum": -40,
+          "maximum": -12
+        },
+        "music_ducking_db": {
+          "type": "number",
+          "minimum": -30,
+          "maximum": 0
+        },
+        "audio_true_peak_dbfs": {
+          "type": "number",
+          "minimum": -6,
+          "maximum": 0
+        }
+      },
+      "required": [
+        "resolution",
+        "fps",
+        "pacing",
+        "subtitle_style",
+        "subtitle_position",
+        "music_mood",
+        "audio_mix_notes",
+        "opening_treatment",
+        "ending_treatment",
+        "opening_ending_inside_scene_durations"
+      ]
+    },
+    "human_review": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "project",
+    "research_brief",
+    "script",
+    "visual_style",
+    "scenes",
+    "editing_plan",
+    "human_review"
+  ]
+}

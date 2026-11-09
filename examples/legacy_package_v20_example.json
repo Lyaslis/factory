@@ -1,0 +1,103 @@
+{
+  "project": {
+    "topic": "Тест миграции",
+    "working_title": "Тест старого пакета",
+    "platform": "TikTok",
+    "language": "ru",
+    "target_duration_seconds": 15,
+    "target_audience": "Взрослая аудитория",
+    "editorial_angle": "Простой тест перехода",
+    "tone": "Разговорный",
+    "aspect_ratio": "9:16"
+  },
+  "research_brief": {
+    "central_thesis": "Оценивай не только цену покупки.",
+    "key_points": ["Учитывай срок службы."],
+    "factual_claims": [
+      {
+        "claim": "Срок службы влияет на общую стоимость покупки.",
+        "verification_status": "needs_external_check",
+        "verification_note": "Тестовое утверждение для миграции."
+      }
+    ],
+    "source_material_used": [],
+    "missing_information": []
+  },
+  "script": {
+    "hook": "Сначала сравни цену.",
+    "full_text": "Сначала сравни цену. Затем подумай о сроке службы. Только так оценивай покупку.",
+    "closing_line": "Только так оценивай покупку.",
+    "estimated_word_count": 99
+  },
+  "visual_style": {
+    "overall_direction": "Спокойная редакционная фотография.",
+    "palette": ["графитовый", "молочный"],
+    "lighting": "Мягкий боковой свет.",
+    "camera_language": "Спокойная камера.",
+    "texture_and_detail": "Естественные фактуры.",
+    "continuity_rules": ["Сохранять общий стиль."],
+    "negative_prompt": "No readable text, no logos, no watermark."
+  },
+  "scenes": [
+    {
+      "scene_id": 1,
+      "duration_seconds": 5,
+      "voiceover_text": "Сначала сравни цену.",
+      "visual_purpose": "Показать ценник без читаемого текста.",
+      "asset_type": "generated_image",
+      "image_prompt": "Close-up of a simple product on a table, vertical 9:16.",
+      "video_prompt": "Legacy extra field that should be cleared.",
+      "motion_prompt": "Legacy extra field that should be cleared.",
+      "on_screen_text": "Цена",
+      "transition": "Cut",
+      "sound_effect": "",
+      "production_note": "Тестовая сцена.",
+      "continuity_notes": "",
+      "continuity_entity_ids": []
+    },
+    {
+      "scene_id": 2,
+      "duration_seconds": 5,
+      "voiceover_text": "Затем подумай о сроке службы.",
+      "visual_purpose": "Показать изношенный предмет.",
+      "asset_type": "image_animation",
+      "image_prompt": "Close-up of a worn shoe, vertical 9:16.",
+      "video_prompt": "Legacy extra field that should be cleared.",
+      "motion_prompt": "Slow camera push-in; the shoe remains still.",
+      "on_screen_text": "Срок службы",
+      "transition": "Cut",
+      "sound_effect": "",
+      "production_note": "Только движение камеры.",
+      "continuity_notes": "",
+      "continuity_entity_ids": []
+    },
+    {
+      "scene_id": 3,
+      "duration_seconds": 5,
+      "voiceover_text": "Только так оценивай покупку.",
+      "visual_purpose": "Завершить ролик спокойным планом.",
+      "asset_type": "ai_video",
+      "image_prompt": "A simple product on a workbench, vertical 9:16.",
+      "video_prompt": "Slow camera pull-back from the product, vertical 9:16.",
+      "motion_prompt": "Legacy extra field that should be cleared.",
+      "on_screen_text": "Оценивай целиком",
+      "transition": "Fade",
+      "sound_effect": "",
+      "production_note": "Тестовый видеоклип.",
+      "continuity_notes": "",
+      "continuity_entity_ids": []
+    }
+  ],
+  "editing_plan": {
+    "resolution": "1080x1920",
+    "fps": 30,
+    "pacing": "Ровный.",
+    "subtitle_style": "Крупный белый текст.",
+    "subtitle_position": "Нижняя безопасная зона.",
+    "music_mood": "Нейтральная.",
+    "audio_mix_notes": "Голос выше музыки.",
+    "opening_treatment": "Внутри первой сцены.",
+    "ending_treatment": "Внутри последней сцены."
+  },
+  "human_review": null
+}

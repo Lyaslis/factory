@@ -1,0 +1,47 @@
+{
+  "ollama": {
+    "base_url": "http://localhost:11434",
+    "model": "gemma4:12b",
+    "timeout_seconds": 1800,
+    "temperature": 0.35,
+    "context_tokens": 12288,
+    "max_output_tokens": 8000,
+    "thinking_mode": false,
+    "unload_after_run": true,
+    "repair_attempts": 2
+  },
+  "planning": {
+    "enabled": true,
+    "thinking_mode": true,
+    "temperature": 0.6,
+    "context_tokens": 12288,
+    "max_output_tokens": 9000,
+    "timeout_seconds": 1800
+  },
+  "defaults": {
+    "platform": "TikTok",
+    "duration_seconds": 60,
+    "style": "Интеллектуальный, любознательный, разговорный автор; немного иронии, без искусственного пафоса и канцелярита.",
+    "audience": "Широкая взрослая аудитория, которой интересны объяснения, наблюдения и авторские рассуждения."
+  },
+  "output": {
+    "projects_directory": "projects"
+  },
+  "production_profile": {
+    "max_ai_video_scenes": 2,
+    "min_scene_seconds": 1.0,
+    "max_scene_seconds": 30.0,
+    "max_scene_words_per_second": 2.8,
+    "rebalance_scene_timing_by_speech": true,
+    "require_visual_anchor_terms": true,
+    "subtitle_font_family": "Noto Sans",
+    "subtitle_font_size_px": 54,
+    "subtitle_max_chars_per_line": 32,
+    "subtitle_safe_margin_percent": 8,
+    "subtitle_highlight_color": "#D6B45C",
+    "voice_target_lufs": -16.0,
+    "music_target_lufs": -29.0,
+    "music_ducking_db": -14.0,
+    "audio_true_peak_dbfs": -1.0
+  }
+}

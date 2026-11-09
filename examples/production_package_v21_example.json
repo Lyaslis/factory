@@ -1,0 +1,145 @@
+{
+  "schema_version": "2.1",
+  "project": {
+    "topic": "Тестовая тема",
+    "working_title": "Тестовый ролик",
+    "platform": "TikTok",
+    "language": "ru",
+    "target_duration_seconds": 15,
+    "target_audience": "Взрослая аудитория",
+    "editorial_angle": "Одна проверяемая мысль",
+    "tone": "Разговорный",
+    "aspect_ratio": "9:16"
+  },
+  "research_brief": {
+    "central_thesis": "Дешёвая покупка не всегда экономит деньги.",
+    "key_points": [
+      "Нужно учитывать длительность использования."
+    ],
+    "factual_claims": [
+      {
+        "claim_id": "claim_01",
+        "claim": "Дешёвая покупка не всегда экономит деньги.",
+        "claim_type": "economic",
+        "used_in_script": true,
+        "script_excerpt": "Дешёвая покупка не всегда экономит деньги.",
+        "verification_status": "needs_external_check",
+        "verification_note": "Общее экономическое утверждение; конкретные примеры требуют источников."
+      }
+    ],
+    "source_material_used": [],
+    "missing_information": []
+  },
+  "script": {
+    "hook": "Сегодня разберём одну мысль.",
+    "full_text": "Сегодня разберём одну мысль. Дешёвая покупка не всегда экономит деньги. Важно считать расходы на дистанции.",
+    "closing_line": "Важно считать расходы на дистанции.",
+    "estimated_word_count": 15
+  },
+  "visual_style": {
+    "overall_direction": "Спокойная кинематографичная редакционная фотография.",
+    "palette": [
+      "графитовый",
+      "молочный"
+    ],
+    "lighting": "Мягкий боковой свет.",
+    "camera_language": "Спокойные устойчивые планы.",
+    "texture_and_detail": "Естественные фактуры, умеренное зерно.",
+    "continuity_rules": [
+      "Если появляется главный персонаж, его внешность неизменна."
+    ],
+    "negative_prompt": "No text, no logos, no watermark, no shaky camera, no distorted faces.",
+    "continuity_entities": [
+      {
+        "entity_id": "person_main",
+        "entity_type": "person",
+        "canonical_description": "an adult man with short dark hair wearing a charcoal grey sweater",
+        "consistency_rules": [
+          "Одинаковая одежда и причёска во всех сценах."
+        ]
+      }
+    ]
+  },
+  "scenes": [
+    {
+      "scene_id": 1,
+      "duration_seconds": 5,
+      "voiceover_text": "Сегодня разберём одну мысль.",
+      "visual_purpose": "Opening portrait of an adult man in a charcoal grey sweater.",
+      "asset_type": "generated_image",
+      "image_prompt": "Cinematic portrait of an adult man with short dark hair wearing a charcoal grey sweater, thoughtful expression, soft side lighting, vertical portrait 9:16.",
+      "video_prompt": "",
+      "motion_prompt": "",
+      "on_screen_text": "Одна мысль",
+      "transition": "Cut",
+      "sound_effect": "",
+      "production_note": "Надпись добавляется при монтаже.",
+      "continuity_notes": "Главный персонаж.",
+      "continuity_entity_ids": [
+        "person_main"
+      ],
+      "visual_anchor_terms": [
+        "adult man",
+        "charcoal grey sweater"
+      ],
+      "motion_target": ""
+    },
+    {
+      "scene_id": 2,
+      "duration_seconds": 5,
+      "voiceover_text": "Дешёвая покупка не всегда экономит деньги.",
+      "visual_purpose": "A worn inexpensive shoe rests on a neutral workbench.",
+      "asset_type": "image_animation",
+      "image_prompt": "Close-up of a worn inexpensive shoe on a neutral workbench, realistic material texture, soft side lighting, vertical portrait 9:16.",
+      "video_prompt": "",
+      "motion_prompt": "Slow stabilized camera push-in toward worn inexpensive shoe; the shoe remains still.",
+      "on_screen_text": "Цена покупки",
+      "transition": "Cut",
+      "sound_effect": "Soft object tap",
+      "production_note": "Движение только камеры.",
+      "continuity_notes": "Предметный кадр, без персонажа.",
+      "continuity_entity_ids": [],
+      "visual_anchor_terms": [
+        "worn inexpensive shoe",
+        "neutral workbench"
+      ],
+      "motion_target": "worn inexpensive shoe"
+    },
+    {
+      "scene_id": 3,
+      "duration_seconds": 5,
+      "voiceover_text": "Важно считать расходы на дистанции.",
+      "visual_purpose": "Closing shot of the same adult man looking toward a window.",
+      "asset_type": "ai_video",
+      "image_prompt": "Cinematic portrait of an adult man with short dark hair wearing a charcoal grey sweater, looking toward a window, soft side lighting, vertical portrait 9:16.",
+      "video_prompt": "An adult man with short dark hair wearing a charcoal grey sweater slowly turns his gaze toward the window; stable slow camera pull-back, cinematic muted palette, vertical portrait 9:16.",
+      "motion_prompt": "",
+      "on_screen_text": "Считай на дистанции",
+      "transition": "Fade",
+      "sound_effect": "Soft closing tone",
+      "production_note": "Короткая спокойная видеовставка.",
+      "continuity_notes": "Внешность персонажа фиксирована реестром.",
+      "continuity_entity_ids": [
+        "person_main"
+      ],
+      "visual_anchor_terms": [
+        "adult man",
+        "window"
+      ],
+      "motion_target": ""
+    }
+  ],
+  "editing_plan": {
+    "resolution": "1080x1920",
+    "fps": 30,
+    "pacing": "Ровный, без спешки.",
+    "subtitle_style": "Крупный белый шрифт без декоративных эффектов.",
+    "subtitle_position": "Нижняя безопасная зона.",
+    "music_mood": "Нейтральная атмосферная музыка.",
+    "audio_mix_notes": "Голос заметно громче музыки.",
+    "opening_treatment": "Короткая заставка внутри первой сцены.",
+    "ending_treatment": "Финальная выдержка внутри последней сцены.",
+    "opening_ending_inside_scene_durations": true
+  },
+  "human_review": []
+}
